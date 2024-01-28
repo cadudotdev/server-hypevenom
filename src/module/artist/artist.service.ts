@@ -26,4 +26,8 @@ export class ArtistService implements ArtistServiceProperties {
   update(id: string, value: ArtistProperties): void {
     this.artistRepository.update({ id }, value);
   }
+
+  delete(id: string): void {
+    this.artistRepository.delete({ id });
+  }
 }

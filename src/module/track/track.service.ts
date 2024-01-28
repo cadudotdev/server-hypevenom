@@ -26,4 +26,8 @@ export class TrackService implements TrackServiceProperties {
   update(id: string, value: TrackProperties): void {
     this.trackRepository.update({ id }, value);
   }
+
+  delete(id: string) {
+    this.trackRepository.delete({ id });
+  }
 }

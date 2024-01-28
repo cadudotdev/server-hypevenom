@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { DefaultControllerProperties } from 'src/types/DefaultControllerProperties';
 import { TrackService } from './track.service';
 import { TrackProperties } from 'src/types/track/TrackProperties';
@@ -22,5 +30,10 @@ export class TrackController implements DefaultControllerProperties {
   @Get('/:id')
   getById(@Param('id') id: string): Promise<TrackProperties> {
     return this.trackService.getById(id);
+  }
+
+  @Delete('/:id')
+  delete(@Param('id') id: string) {
+    this.trackService.delete(id);
   }
 }

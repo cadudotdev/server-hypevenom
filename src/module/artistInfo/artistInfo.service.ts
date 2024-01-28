@@ -27,4 +27,8 @@ export class ArtistInfoService implements ArtistInfoServiceProperties {
   update(id: string, value: ArtistInfoProperties): void {
     this.artistRepository.update({ id }, value);
   }
+
+  delete(id: string) {
+    this.artistRepository.delete({ id });
+  }
 }

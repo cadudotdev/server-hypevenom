@@ -5,4 +5,5 @@ export interface ArtistServiceProperties {
   getAll(page: number): Promise<ArtistProperties[]>;
   save(track: ArtistProperties): void;
   update(id: string, value: ArtistProperties): void;
+  delete(id: string): void;
 }

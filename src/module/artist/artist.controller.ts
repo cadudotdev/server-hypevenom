@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { DefaultControllerProperties } from 'src/types/DefaultControllerProperties';
 import { ArtistService } from './artist.service';
 import { ArtistProperties } from 'src/types/artist/ArtistProperties';
@@ -22,5 +30,10 @@ export class ArtistController implements DefaultControllerProperties {
   @Get('/:id')
   getById(@Param('id') id: string): Promise<ArtistProperties> {
     return this.artistService.getById(id);
+  }
+
+  @Delete('/:id')
+  delete(@Param('id') id: string) {
+    this.artistService.delete(id);
   }
 }
