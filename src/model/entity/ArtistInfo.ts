@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class ArtistInfo implements ArtistInfoProperties {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  @Column()
+  @Column({ type: 'timestamp' })
   age: Date;
   @Column()
   nationality: string;

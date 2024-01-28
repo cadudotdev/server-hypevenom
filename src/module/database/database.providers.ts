@@ -16,7 +16,7 @@ export const databaseProviders = [
         database: process.env.DATABASE_NAME,
         entities: [Track, Artist, ArtistInfo],
         synchronize: true,
-        logging: true,
+        logging: false,
         subscribers: [],
         migrations: [],
       });
