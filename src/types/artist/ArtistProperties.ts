@@ -1,4 +1,4 @@
-import { ArtistInfoProperties } from '../ArtistInfoProperties';
+import { ArtistInfoProperties } from '../artistInfo/ArtistInfoProperties';
 import { TrackProperties } from '../track/TrackProperties';
 
 export interface ArtistProperties {

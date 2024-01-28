@@ -1,4 +1,4 @@
-import { ArtistInfoProperties } from '../ArtistInfoProperties';
+import { ArtistInfoProperties } from './ArtistInfoProperties';
 
 export interface ArtistInfoServiceProperties {
   getById(id: string): Promise<ArtistInfoProperties>;

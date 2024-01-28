@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ArtistInfo } from 'src/model/entity/ArtistInfo';
-import { ArtistInfoProperties } from 'src/types/ArtistInfoProperties';
+import { ArtistInfoProperties } from 'src/types/artistInfo/ArtistInfoProperties';
 import { ArtistInfoServiceProperties } from 'src/types/artistInfo/ArtistInfoServiceProperties';
 import { Repository } from 'typeorm';
 

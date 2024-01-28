@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
-import { ArtistInfoProperties } from 'src/types/ArtistInfoProperties';
+import { ArtistInfoProperties } from 'src/types/artistInfo/ArtistInfoProperties';
 import { DefaultControllerProperties } from 'src/types/DefaultControllerProperties';
 import { ArtistInfoService } from './artistInfo.service';
 

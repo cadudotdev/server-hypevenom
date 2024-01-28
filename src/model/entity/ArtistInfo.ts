@@ -1,4 +1,4 @@
-import { ArtistInfoProperties } from 'src/types/ArtistInfoProperties';
+import { ArtistInfoProperties } from 'src/types/artistInfo/ArtistInfoProperties';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('artist-info')
