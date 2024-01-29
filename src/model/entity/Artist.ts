@@ -11,7 +11,7 @@ import { ArtistInfo } from './ArtistInfo';
 import { Track } from './Track';
 import { ArtistProperties } from 'src/types/artist/ArtistProperties';
 
-@Entity('artist')
+@Entity()
 export class Artist implements ArtistProperties {
   @PrimaryGeneratedColumn('uuid')
   id: string;

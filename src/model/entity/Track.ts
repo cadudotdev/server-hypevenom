@@ -8,7 +8,7 @@ import {
 import { Artist } from './Artist';
 import { TrackProperties } from 'src/types/track/TrackProperties';
 
-@Entity('track')
+@Entity()
 export class Track implements TrackProperties {
   @PrimaryGeneratedColumn('uuid')
   id: string;
