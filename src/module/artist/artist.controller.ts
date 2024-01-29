@@ -11,7 +11,7 @@ import { DefaultControllerProperties } from 'src/types/DefaultControllerProperti
 import { ArtistService } from './artist.service';
 import { ArtistProperties } from 'src/types/artist/ArtistProperties';
 
-@Controller('/artist')
+@Controller('/artists')
 export class ArtistController implements DefaultControllerProperties {
   constructor(private readonly artistService: ArtistService) {}
   @Put('/:id')
