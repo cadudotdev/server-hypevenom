@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { TrackModule } from './track/track.module';
 import { ArtistModule } from './artist/artist.module';
 import { ArtistInfoModule } from './artistInfo/artistInfo.module';
+import { TrackModule } from './track/track.module';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [TrackModule, ArtistModule, ArtistInfoModule],
+  imports: [TrackModule, ArtistModule, ArtistInfoModule, UserModule],
   controllers: [],
   providers: [],
 })

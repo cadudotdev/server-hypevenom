@@ -2,6 +2,7 @@ import { DataSource } from 'typeorm';
 import { Track } from 'src/model/entity/Track';
 import { Artist } from 'src/model/entity/Artist';
 import { ArtistInfo } from 'src/model/entity/ArtistInfo';
+import { User } from 'src/model/entity/User';
 
 export const databaseProviders = [
   {
@@ -14,7 +15,7 @@ export const databaseProviders = [
         username: process.env.DATABASE_USER,
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_NAME,
-        entities: [Track, Artist, ArtistInfo],
+        entities: [Track, Artist, ArtistInfo, User],
         synchronize: true,
         logging: false,
         subscribers: [],
