@@ -1,18 +1,15 @@
+import { ArtistProperties } from 'src/types/artist/ArtistProperties';
 import {
   Column,
   Entity,
   JoinColumn,
-  JoinTable,
-  ManyToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { ArtistInfo } from './ArtistInfo';
-import { Track } from './Track';
-import { ArtistProperties } from 'src/types/artist/ArtistProperties';
 
 @Entity()
-export class Artist implements ArtistProperties {
+export class ArtistEntity implements ArtistProperties {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   @Column()
@@ -24,7 +21,4 @@ export class Artist implements ArtistProperties {
   @OneToOne(() => ArtistInfo)
   @JoinColumn()
   info: ArtistInfo;
-  @ManyToMany(() => Track, () => Track)
-  @JoinTable()
-  track: Track[];
 }

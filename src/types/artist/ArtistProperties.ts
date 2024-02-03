@@ -1,5 +1,4 @@
 import { ArtistInfoProperties } from '../artistInfo/ArtistInfoProperties';
-import { TrackProperties } from '../track/TrackProperties';
 
 export interface ArtistProperties {
   id: string;
@@ -7,5 +6,4 @@ export interface ArtistProperties {
   artistName: string;
   imageLink: string;
   info: ArtistInfoProperties;
-  track: TrackProperties[];
 }

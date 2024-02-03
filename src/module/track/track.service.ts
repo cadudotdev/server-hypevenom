@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Track } from 'src/model/entity/Track';
+import { TrackEntity } from 'src/model/entity/Track';
 import { TrackProperties } from 'src/types/track/TrackProperties';
 import { TrackServiceProperties } from 'src/types/track/TrackServiceProperties';
 import { Repository } from 'typeorm';
@@ -7,7 +7,8 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class TrackService implements TrackServiceProperties {
   constructor(
-    @Inject('TRACK_REPOSITORY') private trackRepository: Repository<Track>,
+    @Inject('TRACK_REPOSITORY')
+    private trackRepository: Repository<TrackEntity>,
   ) {}
 
   getById(id: string): Promise<TrackProperties> {
@@ -19,8 +20,8 @@ export class TrackService implements TrackServiceProperties {
     return this.trackRepository.find();
   }
 
-  save(track: TrackProperties): void {
-    this.trackRepository.save(track);
+  async save(track: TrackProperties): Promise<void> {
+    await this.trackRepository.save(track);
   }
 
   update(id: string, value: TrackProperties): void {
@@ -29,5 +30,12 @@ export class TrackService implements TrackServiceProperties {
 
   delete(id: string) {
     this.trackRepository.delete({ id });
+  }
+
+  getAllTracksRelatedToArtist(id: string): Promise<unknown> {
+    return this.trackRepository.find({
+      relations: ['artists'],
+      where: { artists: { id } },
+    });
   }
 }

@@ -1,3 +1,4 @@
+import { TrackProperties } from 'src/types/track/TrackProperties';
 import {
   Column,
   Entity,
@@ -5,11 +6,10 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Artist } from './Artist';
-import { TrackProperties } from 'src/types/track/TrackProperties';
+import { ArtistEntity } from './Artist';
 
 @Entity()
-export class Track implements TrackProperties {
+export class TrackEntity implements TrackProperties {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   @Column()
@@ -20,7 +20,7 @@ export class Track implements TrackProperties {
   iframLink: string;
   @Column({ length: 2083 })
   imageLink: string;
-  @ManyToMany(() => Artist)
+  @ManyToMany(() => ArtistEntity, { eager: true })
   @JoinTable()
-  artists: Artist[];
+  artists: ArtistEntity[];
 }

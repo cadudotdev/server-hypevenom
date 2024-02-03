@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Artist } from 'src/model/entity/Artist';
+import { ArtistEntity } from 'src/model/entity/Artist';
 import { ArtistProperties } from 'src/types/artist/ArtistProperties';
 import { ArtistServiceProperties } from 'src/types/artist/ArtistServiceProperties';
 import { Repository } from 'typeorm';
@@ -7,7 +7,8 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class ArtistService implements ArtistServiceProperties {
   constructor(
-    @Inject('ARTIST_REPOSITORY') private artistRepository: Repository<Artist>,
+    @Inject('ARTIST_REPOSITORY')
+    private artistRepository: Repository<ArtistEntity>,
   ) {}
 
   getById(id: string): Promise<ArtistProperties> {

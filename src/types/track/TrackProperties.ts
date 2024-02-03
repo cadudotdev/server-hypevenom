@@ -1,4 +1,4 @@
-import { ArtistProperties } from '../artist/ArtistProperties';
+import { ArtistEntity } from 'src/model/entity/Artist';
 
 export interface TrackProperties {
   id: string;
@@ -6,5 +6,5 @@ export interface TrackProperties {
   releaseDate: Date;
   iframLink: string;
   imageLink: string;
-  artists: ArtistProperties[];
+  artists: ArtistEntity[];
 }

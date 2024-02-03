@@ -36,4 +36,9 @@ export class TrackController implements DefaultControllerProperties {
   delete(@Param('id') id: string) {
     this.trackService.delete(id);
   }
+
+  @Get('/related-artist/:id')
+  getAllTracksRelatedToArtist(@Param('id') id: string): Promise<unknown> {
+    return this.trackService.getAllTracksRelatedToArtist(id);
+  }
 }
