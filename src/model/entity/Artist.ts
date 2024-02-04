@@ -21,4 +21,6 @@ export class ArtistEntity implements ArtistProperties {
   @OneToOne(() => ArtistInfo)
   @JoinColumn()
   info: ArtistInfo;
+  @Column({ length: 2083 })
+  description: string;
 }
